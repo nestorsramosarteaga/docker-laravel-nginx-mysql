@@ -32,7 +32,7 @@ docker compose up -d
 
 ### 5. Open a shell inside the PHP-FPM container
 ```bash
-docker compose exec -it APP_NAME-php-fpm bash
+docker exec -it APP_NAME-php-fpm bash
 ```
 
 > 📝 **Note:** Replace APP_NAME with the value you defined in your .env file.
@@ -48,7 +48,12 @@ composer install
 php artisan key:generate
 ```
 
-### 8. Test the application in your browser
+### 8. Rumn migrations
+```bash
+php artisan migrate
+```
+
+### . Test the application in your browser
 ```bash
 http://localhost:SRV_PORT_HOST
 ```
