@@ -22,12 +22,9 @@ services:
       - ${DB_PORT_HOST}:3306
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql/mysql-init:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
     networks:
       - app-network
 
@@ -44,7 +41,7 @@ services:
       - .env:/var/www/html/.env
       - ./php-fpm/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
     ports:
-      - 9000:80
+      - 9009:80
     networks:
       - app-network
     extra_hosts:
