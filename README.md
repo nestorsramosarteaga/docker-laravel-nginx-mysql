@@ -15,9 +15,7 @@ cp .env.example .env
 - APP_NAME
 - SRV_PORT_HOST
 - DB_PORT_HOST
-- DB_ROOT_PASSWORD
 - DB_DATABASE
-- DB_USERNAME
 - DB_PASSWORD
 
 ### 3. Build the Docker containers
